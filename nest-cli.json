@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/witekkie-app/src",
+  "monorepo": true,
+  "root": "apps/witekkie-app",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/witekkie-app/tsconfig.app.json"
+  },
+  "projects": {
+    "witekkie-app": {
+      "type": "application",
+      "root": "apps/witekkie-app",
+      "entryFile": "main",
+      "sourceRoot": "apps/witekkie-app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/witekkie-app/tsconfig.app.json"
+      }
+    },
+    "wimarket-app": {
+      "type": "application",
+      "root": "apps/wimarket-app",
+      "entryFile": "main",
+      "sourceRoot": "apps/wimarket-app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/wimarket-app/tsconfig.app.json"
+      }
+    },
+    "products-manager": {
+      "type": "application",
+      "root": "apps/products-manager",
+      "entryFile": "main",
+      "sourceRoot": "apps/products-manager/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/products-manager/tsconfig.app.json"
+      }
+    }
+  }
+}
