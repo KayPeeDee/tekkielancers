@@ -10,7 +10,20 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "paths": {}
+    "paths": {
+      "@witekkie/user-lib": [
+        "libs/user-lib/src"
+      ],
+      "@witekkie/user-lib/*": [
+        "libs/user-lib/src/*"
+      ],
+      "@witekkie/auth": [
+        "libs/auth/src"
+      ],
+      "@witekkie/auth/*": [
+        "libs/auth/src/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules",
