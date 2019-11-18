@@ -20,4 +20,9 @@ export class AppController {
     return this.appService.accumulate(data);
   }
 
+  @Get('users')
+  async getUsers(){
+    return this.appService.getUsers();
+  }
+
 }

@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { TestingService } from './testing.service';
 import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PassportModule } from '@nestjs/passport';
@@ -36,4 +35,4 @@ import { UserProfileModule } from './user-profile/user-profile.module';
     UserProfileModule
   ],
 })
-export class AuthModule {}
+export class AuthModule {} 

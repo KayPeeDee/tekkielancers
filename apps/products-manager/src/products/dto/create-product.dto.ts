@@ -3,4 +3,5 @@ export class CreateProductDto {
     readonly productCategory: string;
     readonly price: number;
     readonly description: string;
+    readonly features: string[];
 }

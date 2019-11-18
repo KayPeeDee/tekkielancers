@@ -1,19 +1,26 @@
-import { Controller, Get, Post, Req, Param, Patch, Delete, Res, HttpStatus, Body, NotFoundException, Put } from '@nestjs/common';
+import { Controller, Get, Post, Req, Param, Patch, Delete, Res, HttpStatus, Body, NotFoundException, Put, UseGuards } from '@nestjs/common';
 import { ProductCategoryService } from './product-category.service';
 import { Request, Response } from 'express';
 import { CreateProductCategoryDTO } from './dto/create-product-category.dto';
+import { AuthGuard } from '@nestjs/passport';
+import { RoleGuard, Roles, User } from '@witekkie/auth';
 
 @Controller('product-categories')
+// @UseGuards(RoleGuard)
 export class ProductCategoryController {
     constructor(private readonly service: ProductCategoryService){}
 
+
     @Get()
-    async getProductCategories(@Res() res){
+    @UseGuards(AuthGuard('jwt'))
+    // @Roles('admin')
+    async getProductCategories(@Res() res, @User() user: any, @Req() req){
         const productCategories = await this.service.getAllProductCategories();
         return res.status(HttpStatus.OK).json(productCategories);
     }
 
 
+    @UseGuards(AuthGuard('jwt'))
     @Post()
     async addNewProductCategory(@Res() res, @Body() createProductCategoryDTO: CreateProductCategoryDTO){
         

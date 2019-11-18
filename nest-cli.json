@@ -61,6 +61,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/auth/tsconfig.lib.json"
       }
+    },
+    "projects-manager": {
+      "type": "application",
+      "root": "apps/projects-manager",
+      "entryFile": "main",
+      "sourceRoot": "apps/projects-manager/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/projects-manager/tsconfig.app.json"
+      }
     }
   }
 }

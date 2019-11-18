@@ -21,7 +21,7 @@ export class AppController {
 
   @MessagePattern('add')
   async accumulate(data: number[]){
-    this.logger.log(`Adding ${data}`);
+    this.logger.log(`Adding ${data.toString()}`);
     return this.appService.accumulate(data);
   }
 

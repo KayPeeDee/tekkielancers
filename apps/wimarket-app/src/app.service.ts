@@ -24,5 +24,9 @@ export class AppService {
     return this.client.send<number, number[]>('add', data);
   }
 
+  public getUsers(){
+    return this.client.send<{}>('users', {});
+  }
+
 
 }
